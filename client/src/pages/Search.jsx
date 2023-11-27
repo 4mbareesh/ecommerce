@@ -14,9 +14,9 @@ function Search() {
     <div className='p-5'>
       <h1>Search Results</h1>
       <h6>
-        {values?.results.length < 1
+        {values?.results?.length < 1
           ? 'No product match'
-          : `Found ${values?.results.length} results`}
+          : `Found ${values?.results?.length} results`}
       </h6>
       <div className='grid md:grid-cols-2 lg:grid-cols-4 gap-8'>
         {values?.results?.map((data, index) => (

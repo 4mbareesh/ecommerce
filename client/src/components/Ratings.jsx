@@ -11,13 +11,13 @@ export const SingleRating = ({ productId }) => {
   const fetchRatings = async () => {
     try {
       const { data } = await axios.get(`/ratings/${productId}`)
-      if (data.totalRatings.length > 0) {
+      if (data?.totalRatings?.length > 0) {
         const totalSum = data.totalRatings.reduce(
           (acc, rating) => acc + rating.rating,
           0
         )
         // Calculate the average rating
-        const averageRating = totalSum / data.totalRatings.length
+        const averageRating = totalSum / data.totalRatings?.length
         // console.log(averageRating)
         const roundedRating = Math.round(averageRating * 2) / 2
         setTotalStar(roundedRating)
@@ -90,7 +90,7 @@ export const DetailedRating = ({ productId }) => {
   const fetchRatings = async () => {
     try {
       const { data } = await axios.get(`/ratings/${productId}`)
-      if (data.totalRatings && data.totalRatings.length > 0) {
+      if (data.totalRatings && data.totalRatings?.length > 0) {
         // console.log(ratings)
         setRatings(data.totalRatings)
         // console.log(data.totalRatings)
@@ -99,8 +99,8 @@ export const DetailedRating = ({ productId }) => {
           0
         )
         // Calculate the average rating
-        const averageRating = totalSum / data.totalRatings.length
-        // console.log(averageRating, data.totalRatings.length)
+        const averageRating = totalSum / data.totalRatings?.length
+        // console.log(averageRating, data.totalRatings?.length)
         const roundedRating = Math.round(averageRating * 2) / 2
         setTotalStar(roundedRating)
         // console.log(roundedRating)
@@ -137,7 +137,7 @@ export const DetailedRating = ({ productId }) => {
       {totalStar !== undefined && (
         <>
           <div className='rating rating-md sm:rating-lg rating-half flex justify-between py-4'>
-            {ratings.length > 0 ? (
+            {ratings?.length > 0 ? (
               <p className='mt-5'>Total Ratings</p>
             ) : (
               <p className='mt-1 sm:mt-5'>Uh oh, No reviews available yet!</p>

@@ -78,7 +78,7 @@ function ProductCard({ products, total, loading, setPage }) {
         </div>
       ))}
       <div>
-        {products && products.length < total && (
+        {products && products?.length < total && (
           <button
             className='btn btn-neutral'
             onClick={(e) => {

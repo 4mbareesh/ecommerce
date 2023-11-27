@@ -111,7 +111,7 @@ function ProductPage() {
       </div>
 
       <div>
-        {relatedProducts.length < 1 ? (
+        {relatedProducts?.length < 1 ? (
           <p className='text-center text-xl bg-gray-100 text-gray-900 font-bold py-10'>
             No Similar Products Found ;)
           </p>
