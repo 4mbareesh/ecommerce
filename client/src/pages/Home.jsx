@@ -96,12 +96,12 @@ function Home() {
   }
 
   useEffect(() => {
-    if (!checked.length || !radio.length) fetchFilteredProducts()
+    if (!checked?.length || !radio?.length) fetchFilteredProducts()
     //eslint-disable-next-line
-  }, [checked.length, radio])
+  }, [checked?.length, radio])
 
   useEffect(() => {
-    if (checked.length || radio.length) filterProduct()
+    if (checked?.length || radio?.length) filterProduct()
     // eslint-disable-next-line
   }, [checked, radio])
 
