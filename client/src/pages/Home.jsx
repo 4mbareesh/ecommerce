@@ -134,7 +134,7 @@ function Home() {
       <div className=' justify-center items-center bg-gray-100 py-5'>
         <h1 className='text-center text-xl'>Trending</h1>
         <div className='px-1 md:p-4'>
-          <Slider products={products.slice(1, 5)} />
+          <Slider products={products?.slice(1, 5)} />
         </div>
         {categories?.map((data, index) => (
           <div key={index}>
