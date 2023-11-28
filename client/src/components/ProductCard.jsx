@@ -41,7 +41,9 @@ function ProductCard({ products, total, loading, setPage }) {
             </button>
             <Link to={`/product-details/${data?.slug}`}>
               <img
-                src={`/view-productimg/${data?._id}`}
+                src={`${import.meta.env.VITE_SERVER_URL}/view-productimg/${
+                  data?._id
+                }`}
                 alt=''
                 className='p-5 h-64 w-full object-contain transition duration-500 group-hover:scale-110 sm:h-72'
                 draggable={false}
