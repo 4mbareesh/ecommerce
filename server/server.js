@@ -27,7 +27,11 @@ app.use(express.urlencoded({ extended: false }))
 
 // Connect to MongoDB using process.env.MONGO_URL
 mongoose
-  .connect(process.env.MONGO_URL)
+  .connect(process.env.MONGO_URL, {
+    dbName: 'ecommerce',
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
   .then(() => console.log('MongoDB connected'))
   .catch((err) => console.log(err))
 
